@@ -1,3 +1,9 @@
 import { defineConfig } from '@tanstack/react-start/config'
 
-export default defineConfig({})
+const config: ReturnType<typeof defineConfig> = defineConfig({
+  server: {
+    preset: 'netlify',
+  },
+})
+
+export default config

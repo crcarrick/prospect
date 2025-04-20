@@ -1,6 +1,10 @@
 {
   "folders": [
     {
+      "name": "Prospect",
+      "path": "."
+    },
+    {
       "name": "Web App",
       "path": "apps/web"
     },
