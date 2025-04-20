@@ -2,33 +2,34 @@
 node_modules/
 
 # Env
-/src/.env
-/src/.env.local
-/src/.env.development
-/src/.env.test
-/src/.env.production
-/src/.env.staging
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
 
 # System Files
 .DS_Store
 Thumbs.db
 
 # pixi environments
-/src/visionary/.pixi
-/src/visionary/*.egg-info
+/visionary/.pixi
+/visionary/*.egg-info
 
 # mypy cache
-/src/visionary/.mypy_cache
+/visionary/.mypy_cache
 
 # ruff cache
-/src/visionary/.ruff_cache
+/visionary/.ruff_cache
 
 # black cache
-/src/visionary/.black_cache
+/visionary/.black_cache
 
 # pycache
-/src/visionary/__pycache__
+/visionary/__pycache__
 
 .mypy_cache
 .ruff_cache
 .black_cache
+.sst

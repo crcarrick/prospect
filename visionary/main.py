@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI, Response
 
 app = FastAPI()
@@ -5,4 +7,4 @@ app = FastAPI()
 
 @app.get("/")
 def read_root() -> Response:
-    return Response(content="Hello World", media_type="text/plain")
+    return Response(content=os.environ["VISIONARY_BUCKET_NAME"])

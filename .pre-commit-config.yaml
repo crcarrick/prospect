@@ -7,7 +7,7 @@ repos:
         entry: pnpm --filter web lint-staged
         language: system
         pass_filenames: false
-        files: ^src/app/
+        files: ^app/
 
   # Black (Python formatter)
   - repo: https://github.com/psf/black
@@ -16,7 +16,7 @@ repos:
       - id: black
         name: Format with Black
         language_version: python3
-        files: ^src/visionary/
+        files: ^visionary/
 
   # Mypy (Python type checker)
   - repo: https://github.com/pre-commit/mirrors-mypy
@@ -25,7 +25,7 @@ repos:
       - id: mypy
         name: Type check with mypy
         language_version: python3
-        files: ^src/visionary/
+        files: ^visionary/
 
   # Ruff (Python linter)
   - repo: https://github.com/astral-sh/ruff-pre-commit
@@ -34,4 +34,4 @@ repos:
       - id: ruff
         name: Lint with Ruff
         language_version: python3
-        files: ^src/visionary/
+        files: ^visionary/

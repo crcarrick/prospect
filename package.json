@@ -4,12 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "sst dev",
     "dev:web": "vinxi dev",
-    "dev:vis": "cd src/visionary && pixi dev",
+    "dev:vis": "cd visionary && pixi run dev",
     "lint:web": "eslint --fix",
-    "lint:vis": "cd src/visionary &&pixi lint",
+    "lint:vis": "cd visionary && pixi run lint",
     "typecheck:web": "tsc --noEmit",
-    "typecheck:vis": "cd src/visionary && pixi typecheck",
+    "typecheck:vis": "cd visionary && pixi run typecheck",
     "prepare": "pre-commit install"
   },
   "lint-staged": {

@@ -1,6 +1,6 @@
 {
-  "python.defaultInterpreterPath": "${workspaceFolder}/apps/visionary/.pixi/envs/default/bin/python",
-  "typescript.tsdk": "${workspaceFolder}/apps/web/node_modules/typescript/lib",
+  "python.defaultInterpreterPath": "${workspaceFolder}/visionary/.pixi/envs/default/bin/python",
+  "typescript.tsdk": "${workspaceFolder}/node_modules/typescript/lib",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"

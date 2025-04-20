@@ -9,6 +9,15 @@ declare module "sst" {
       "name": string
       "type": "sst.aws.Bucket"
     }
+    "ProspectVisionary": {
+      "service": string
+      "type": "sst.aws.Service"
+      "url": string
+    }
+    "ProspectVpc": {
+      "bastion": string
+      "type": "sst.aws.Vpc"
+    }
     "ProspectWeb": {
       "type": "sst.aws.TanstackStart"
       "url": string

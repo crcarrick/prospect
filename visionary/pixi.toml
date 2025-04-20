@@ -1,0 +1,23 @@
+[project]
+name = "visionary"
+version = "0.1.0"
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "osx-64", "linux-64", "linux-aarch64"]
+
+[dependencies]
+python = "3.13.*"
+fastapi = ">=0.115.12,<0.116"
+uvicorn = ">=0.34.1,<0.35"
+opencv = ">=4.11.0,<5"
+moviepy = ">=1.0.3,<2"
+ruff = ">=0.11.6,<0.12"
+black = ">=25.1.0,<26"
+mypy = ">=1.15.0,<2"
+ffmpeg = ">=7.1.1,<8"
+
+[tasks]
+dev = "uvicorn main:app --reload --host 0.0.0.0 --port 8000"
+typecheck = "mypy ."
+lint = "ruff check ."
+format = "black . && ruff check . --fix"
+fix = "ruff check . --fix && black ."
