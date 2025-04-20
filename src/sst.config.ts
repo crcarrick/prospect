@@ -1,10 +1,11 @@
 /// <reference path="./.sst/platform/config.d.ts" />
 
 export default $config({
-  app() {
+  app(input) {
     return {
       name: 'web',
       home: 'aws',
+      removal: input?.stage === 'production' ? 'retain' : 'remove',
     }
   },
   async run() {
@@ -13,6 +14,10 @@ export default $config({
       cors: {
         allowMethods: ['PUT'],
       },
+    })
+
+    new sst.aws.TanStackStart('ProspectWeb', {
+      link: [bucket],
     })
 
     return {

@@ -1,10 +1,52 @@
 {
+  "name": "prospect",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "concurrently -n web,visionary -c cyan,green \"pnpm --filter web dev\" \"pnpm --filter visionary dev\"",
+    "dev:web": "vinxi dev",
+    "dev:vis": "cd src/visionary && pixi dev",
+    "lint:web": "eslint --fix",
+    "lint:vis": "cd src/visionary &&pixi lint",
+    "typecheck:web": "tsc --noEmit",
+    "typecheck:vis": "cd src/visionary && pixi typecheck",
     "prepare": "pre-commit install"
   },
-  "packageManager": "pnpm@10.8.1",
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "tsc --noEmit"
+    ],
+    "*.{json,md,css,html}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.787.0",
+    "@aws-sdk/s3-request-presigner": "^3.787.0",
+    "@tanstack/react-router": "^1.116.0",
+    "@tanstack/react-start": "^1.116.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sst": "3.13.14",
+    "vinxi": "0.5.1"
+  },
   "devDependencies": {
-    "concurrently": "^9.1.2"
-  }
+    "@crcarrick/eslint-config": "^1.0.11",
+    "@crcarrick/tsconfig": "^1.0.0",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.25.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.25.0",
+    "eslint-plugin-perfectionist": "^4.11.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "lint-staged": "^15.5.1",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.30.1"
+  },
+  "packageManager": "pnpm@10.8.1"
 }
