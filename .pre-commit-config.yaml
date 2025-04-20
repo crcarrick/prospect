@@ -1,5 +1,5 @@
 repos:
-  # Lint-staged (JS/TS)
+  # Lint-staged (ESLint / Prettier / Typescript)
   - repo: local
     hooks:
       - id: lint-staged
@@ -8,15 +8,6 @@ repos:
         language: system
         pass_filenames: false
         files: ^app/
-
-  # Black (Python formatter)
-  - repo: https://github.com/psf/black
-    rev: 25.1.0
-    hooks:
-      - id: black
-        name: Format with Black
-        language_version: python3
-        files: ^visionary/
 
   # Mypy (Python type checker)
   - repo: https://github.com/pre-commit/mirrors-mypy
@@ -27,7 +18,7 @@ repos:
         language_version: python3
         files: ^visionary/
 
-  # Ruff (Python linter)
+  # Ruff (Python linter / formatter)
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.5.0
     hooks:

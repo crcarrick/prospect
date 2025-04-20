@@ -13,15 +13,25 @@ const getPresignedUrl = createServerFn().handler(async () => {
   return getSignedUrl(new S3Client({}), command).then((url) => ({ url }))
 })
 
+const testVisionary = createServerFn().handler(async () => {
+  const response = await fetch(Resource.ProspectVisionary.url)
+  const text = await response.text()
+
+  return { text }
+})
+
 export const Route = createFileRoute('/upload')({
   component: RouteComponent,
-  loader: () => getPresignedUrl(),
+  loader: async () => ({
+    visionary: await testVisionary(),
+    presignedUrl: await getPresignedUrl(),
+  }),
 })
 
 function RouteComponent() {
-  const { url } = Route.useLoaderData()
+  const { visionary, presignedUrl } = Route.useLoaderData()
 
-  console.log(url)
+  console.log(visionary, presignedUrl)
 
   return (
     <div>

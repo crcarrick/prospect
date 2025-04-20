@@ -23,10 +23,11 @@ export default $config({
       }),
     })
 
-    new sst.aws.Service('ProspectVisionary', {
+    const visionary = new sst.aws.Service('ProspectVisionary', {
       cluster,
       link: [bucket],
       dev: {
+        url: 'http://localhost:8000',
         command: 'pnpm dev:vis',
       },
       image: {
@@ -42,7 +43,7 @@ export default $config({
     })
 
     new sst.aws.TanStackStart('ProspectWeb', {
-      link: [bucket],
+      link: [bucket, visionary],
       dev: {
         command: 'pnpm dev:web',
       },
