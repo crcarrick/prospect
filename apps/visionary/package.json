@@ -1,0 +1,12 @@
+{
+  "name": "visionary",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "pixi run dev",
+    "typecheck": "pixi run typecheck",
+    "lint": "pixi run lint",
+    "format": "pixi run format",
+    "fix": "pixi run fix"
+  }
+}

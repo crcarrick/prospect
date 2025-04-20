@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Env
+/apps/web/.env
+/apps/web/.env.local
+/apps/web/.env.development
+/apps/web/.env.test
+/apps/web/.env.production
+/apps/web/.env.staging
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# pixi environments
+/apps/visionary/.pixi
+/apps/visionary/*.egg-info
+
+# mypy cache
+/apps/visionary/.mypy_cache
+
+# ruff cache
+/apps/visionary/.ruff_cache
+
+# black cache
+/apps/visionary/.black_cache
+
+# pycache
+/apps/visionary/__pycache__
+
+.mypy_cache
+.ruff_cache
+.black_cache
