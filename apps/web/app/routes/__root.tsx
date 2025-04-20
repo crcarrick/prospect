@@ -6,10 +6,6 @@ import {
 } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
 
-const foo = []
-
-foo[0].bar()
-
 export const Route = createRootRoute({
   head: () => ({
     meta: [
