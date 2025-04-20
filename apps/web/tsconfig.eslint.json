@@ -1,5 +1,6 @@
 {
-  "include": ["app/**/*.{ts,tsx}"],
+  "extends": "./tsconfig.json",
+  "include": ["app/**/*.ts", "app/**/*.tsx"],
   "compilerOptions": {
     "noEmit": true
   }
